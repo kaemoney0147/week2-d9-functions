@@ -43,33 +43,56 @@ function boundary(n) {
         return false
     }
 }
-let s = 20;
-console.log('Boundary is:', boundary(s))
+console.log('Boundary is:', boundary(20))
 
 /* EXERCISE 5
  Write a function called "strivify" which accepts a string as a parameter.
  It should add the word "Strive" in front of the given string, but if the given string already begins with "Strive", then it should just return the original string.
 */
-
+function strivify(some) {
+    let addUp = some + 'Strive';
+    return addUp
+}
+let addWord = strivify('fruit')
+let singleWord = addWord === 'strive' ? 'strive' : addWord;
+console.log(singleWord)
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
  HINT: Modulus Operator
 */
 
-/* WRITE YOUR ANSWER HERE */
-
+function check3and7(n) {
+    if (n % 3 == 0 || n % 7 == 0) {
+        return 'Multiple of 3 or7';
+    }
+    else {
+        return 'Not multiple of 3 or 7'
+    }
+}
+console.log('Ex6:', check3and7(30))
 /* EXERCISE 7
- Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
-*/
+ Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).*/
 
-/* WRITE YOUR ANSWER HERE */
+function reverseString(mine) {
+    return mine.split('').reverse().join('');
+}
+console.log('Ex7:', reverseString('love'))
 
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
+function upperFirst(str) {
+    const titleCase = str
+        .toLowerCase()
+        .split(' ')
+        .map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        })
+        .join(' ');
 
-/* WRITE YOUR ANSWER HERE */
-
+    return titleCase;
+}
+console.log('EX8:', upperFirst('good morning'))
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
@@ -79,8 +102,6 @@ console.log('Boundary is:', boundary(s))
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
-
-/* WRITE YOUR ANSWER HERE */
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
